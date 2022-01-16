@@ -1,5 +1,19 @@
 # udemy-nextjs-modern-react
 
+## 開発環境起動
+```
+# コマンドプロンプト or powershellにて↓のコマンドを実行
+docker-compose -f docker-compose.dev.yml build
+docker-compose -f docker-compose.dev.yml up -d
+```
+
+## 環境構築
+### Docker for windowsのインストール
+wsl内のdockerだけで開発出来ると思っていましたが
+windows for Dockerがないとremote-containerが使えない？かもしれません。
+https://docs.docker.jp/docker-for-windows/install.html
+https://docs.docker.com/desktop/windows/install/
+
 ## 環境構築
 ### WSLのインストール
 [wsl install](https://docs.microsoft.com/ja-jp/windows/wsl/install)に従ってWSLをインストールする

@@ -1,0 +1,25 @@
+version: '3'
+services:
+    ##############################################
+    # 画面側(フロントエンド)
+    ##############################################
+    udemy-frontend-next:
+      container_name: udemy-frontend-next-app
+      build:
+          context: ./frontend/next
+          dockerfile: Dockerfile.dev
+      tty: true
+      ports:
+        - "3000:3000"
+      volumes:
+          - "./frontend/next:/usr/src/app/frontend"
+      networks:
+          aschat_network:
+              ipv4_address: 192.168.144.11
+
+networks:
+    aschat_network:
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.144.0/24
