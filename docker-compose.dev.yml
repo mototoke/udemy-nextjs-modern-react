@@ -11,6 +11,7 @@ services:
       tty: true
       ports:
         - "3000:3000"
+        - "3001:3001"
       volumes:
           - "./frontend/next:/usr/src/app/frontend"
       networks:
