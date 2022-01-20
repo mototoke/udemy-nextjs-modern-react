@@ -17,6 +17,22 @@ services:
       networks:
           aschat_network:
               ipv4_address: 192.168.144.11
+    ##############################################
+    # サービス側(バックエンド)
+    ##############################################
+    udemy-backend-django:
+      container_name: udemy-backend-django-app
+      build:
+          context: ./backend/django
+          dockerfile: Dockerfile.dev
+      tty: true
+      ports:
+        - "8000:8000"
+      volumes:
+          - "./backend/django:/usr/src/app/backend"
+      networks:
+          aschat_network:
+              ipv4_address: 192.168.144.21
 
 networks:
     aschat_network:
